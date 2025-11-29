@@ -1,6 +1,6 @@
 common:
   containerRegistryURL: devopsinsidersacr235.azurecr.io
-  ingressClass: azure-application-gateway
+  ingressClass: nginx
   
 ui:
   replicas: 2
@@ -22,7 +22,7 @@ getTask:
   connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-78666.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
     host: dev-get-tasks-api.jhandu.shop
-    ingressClass: azure-application-gateway
+    ingressClass: nginx
 
 deleteTask:
   replicas: 2
@@ -34,7 +34,7 @@ deleteTask:
   connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-78666.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
     host: dev-delete-task-api.jhandu.shop
-    ingressClass: azure-application-gateway
+    ingressClass: nginx
 
 addTask:
   replicas: 2
@@ -46,4 +46,4 @@ addTask:
   connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-78666.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
     host: dev-add-task-api.jhandu.shop
-    ingressClass: azure-application-gateway
+    ingressClass: nginx
