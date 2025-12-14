@@ -1,5 +1,5 @@
 common:
-  containerRegistryURL: devopsinsidersacr235.azurecr.io
+  containerRegistryURL: acrtodomicroapp01.azurecr.io
   ingressClass: nginx
   
 ui:
@@ -10,18 +10,18 @@ ui:
   port: 80
   ServicePort: 80
   ingress:
-    host: dev-ui.jhandu.shop
+    host: ui.my-app-gateway.shop
 
 getTask:
   replicas: 2
   image:
-    name: todo-get-tasks-api
+    name: todo-add-tasks-api
     tag: v1
   port: 8000
   ServicePort: 80
-  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-78666.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-todoappmicro-server.database.windows.net,1433;Database=sqldb-todomicroapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
-    host: dev-get-tasks-api.jhandu.shop
+    host: get-tasks-api.my-app-gateway.shop
     ingressClass: nginx
 
 deleteTask:
@@ -31,9 +31,9 @@ deleteTask:
     tag: v1
   port: 8000
   ServicePort: 80
-  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-78666.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-todoappmicro-server.database.windows.net,1433;Database=sqldb-todomicroapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
-    host: dev-delete-task-api.jhandu.shop
+    host: delete-task-api.my-app-gateway.shop
     ingressClass: nginx
 
 addTask:
@@ -43,7 +43,7 @@ addTask:
     tag: v1
   port: 8000
   ServicePort: 80
-  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-78666.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-todoappmicro-server.database.windows.net,1433;Database=sqldb-todomicroapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
-    host: dev-add-task-api.jhandu.shop
+    host: add-task-api.my-app-gateway.shop
     ingressClass: nginx
